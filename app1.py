@@ -44,6 +44,8 @@ def main():
         # Przycisk wyboru portu zaokrętowania
         embarked_radio = st.radio("Port", list(embarked_d.keys()), format_func=lambda x: embarked_d[x])
 
+        sibsp_slider = st.slider("Liczba rodzeństwa/małżonków na pokładzie", min_value=0, max_value=10, value=0)
+
     # Dane wejściowe w prawej kolumnie
     with right:
         # Suwak dla wieku, bazujący na oryginalnym zakresie danych (min: 0.42, max: 80)
