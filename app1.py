@@ -2,15 +2,14 @@ import streamlit as st
 import pickle
 from datetime import datetime
 
-# Wczytanie wcześniej wytrenowanego modelu
-filename = "model.sv"
+import joblib
 
-# Załaduj model w odpowiedni sposób
+# Wczytaj model zapisany w pliku `model.sv`
+filename = "model.sv"
 try:
-    with open(filename, "rb") as file:
-        model = pickle.load(file)
-except FileNotFoundError:
-    st.error("Model file not found. Please ensure 'model.sv' is in the application directory.")
+    model = joblib.load(filename)
+except Exception as e:
+    st.error(f"Błąd podczas ładowania modelu: {e}")
     st.stop()
 
 # Słowniki do mapowania zakodowanych zmiennych na etykiety
