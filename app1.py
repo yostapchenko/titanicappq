@@ -44,8 +44,6 @@ def main():
         # Przycisk wyboru portu zaokrętowania
         embarked_radio = st.radio("Port", list(embarked_d.keys()), format_func=lambda x: embarked_d[x])
 
-        sibsp_slider = st.slider("Liczba rodzeństwa/małżonków na pokładzie", min_value=0, max_value=10, value=0)
-
     # Dane wejściowe w prawej kolumnie
     with right:
         # Suwak dla wieku, bazujący na oryginalnym zakresie danych (min: 0.42, max: 80)
@@ -62,7 +60,7 @@ def main():
         st.subheader("Czy pasażer przeżyłby?")
 
         # Przygotowanie danych wejściowych do przewidywania
-        input_data = [[pclass_radio, sex_radio, age_slider, sibsp_slider, family_slider, fare_slider, embarked_radio]]
+        input_data = [[pclass_radio, sex_radio, age_slider, family_slider, fare_slider, embarked_radio]]
 
         try:
             # Wykonanie przewidywania
