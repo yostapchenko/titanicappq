@@ -60,7 +60,7 @@ def main():
         st.subheader("Czy pasażer przeżyłby?")
 
         # Przygotowanie danych wejściowych do przewidywania
-        input_data = [[pclass_radio, sex_radio, age_slider, family_slider, fare_slider, embarked_radio]]
+        input_data = [[pclass_radio, sex_radio, age_slider, sibsp_slider, family_slider, fare_slider, embarked_radio]]
 
         try:
             # Wykonanie przewidywania
